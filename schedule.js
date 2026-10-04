@@ -26,3 +26,4 @@ function parity(date){const days=Math.floor((Date.parse(date+'T00:00:00Z')-Date.
 function lessons(date,group){const day=new Date(date+'T12:00:00Z').getUTCDay();return SCHEDULE.filter(x=>x.day===day&&(!x.group||x.group===group)&&(x.parity==='all'||x.parity===parity(date))).sort((a,b)=>a.slot-b.slot);}
 function minutes(t){return Number(t.slice(0,2))*60+Number(t.slice(3,5));}
 if(typeof module!=='undefined')module.exports={parity,lessons,minutes};
+
